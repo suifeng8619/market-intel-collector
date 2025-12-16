@@ -8,60 +8,82 @@
 
 ## 1. Basic Information
 
-| Field | Value | Source |
-|-------|-------|--------|
-| Official Website | {URL} | - |
-| Company | {company_name} | [{source}]({URL}) |
-| Founded | {year} | [{source}]({URL}) |
-| Headquarters | {location} | [{source}]({URL}) |
-| Category | {e.g., Project Management, Note-taking} | [{source}]({URL}) |
-| Target Users | {e.g., Teams, Individuals, Enterprise} | [{source}]({URL}) |
+<source url="{official_website_url}">
+**Official Website**: {URL}
+
+| Field | Value |
+|-------|-------|
+| Company | {company_name} |
+| Founded | {year} |
+| Headquarters | {location} |
+| Category | {e.g., Project Management, Note-taking} |
+| Target Users | {e.g., Teams, Individuals, Enterprise} |
+</source>
 
 ---
 
 ## 2. Pricing Information
 
-| Plan | Price | Key Features | Link |
-|------|-------|--------------|------|
-| Free | $0/mo | {feature list} | [{Pricing}]({URL}) |
-| {Pro/Plus} | ${X}/mo | {feature list} | [{Pricing}]({URL}) |
-| {Team/Business} | ${X}/mo | {feature list} | [{Pricing}]({URL}) |
-| Enterprise | Contact Sales | {feature list} | [{Pricing}]({URL}) |
+<source url="{pricing_page_url}">
+| Plan | Price | Key Features |
+|------|-------|--------------|
+| Free | $0/mo | {feature list} |
+| {Pro/Plus} | ${X}/mo | {feature list} |
+| {Team/Business} | ${X}/mo | {feature list} |
+| Enterprise | Contact Sales | {feature list} |
 
 **Pricing Notes**: {e.g., annual discount, per-user pricing, free trial availability}
+</source>
 
 ---
 
 ## 3. Official Description
 
+<source url="{official_website_url}">
 > {Official tagline/slogan}
 
 **Full Description**:
 > {Official product description in English}
 
+**Claimed Differentiators**:
+> {What the company says makes them unique}
+</source>
+
+<source url="{features_page_url}">
 **Core Features**:
 - {Feature 1}
 - {Feature 2}
 - {Feature 3}
 - {Feature 4}
 - {Feature 5}
-
-**Claimed Differentiators**:
-> {What the company says makes them unique}
-
-**Source**: [{source_name}]({URL})
+</source>
 
 ---
 
 ## 4. Ratings Summary
 
-| Source | Rating | Reviews Count | Link |
-|--------|--------|---------------|------|
-| G2 | {X}/5 | {N} reviews | [{G2}]({URL}) |
-| Capterra | {X}/5 | {N} reviews | [{Capterra}]({URL}) |
-| TrustRadius | {X}/10 | {N} reviews | [{TrustRadius}]({URL}) |
-| Product Hunt | {N} upvotes | {N} reviews | [{PH}]({URL}) |
-| GetApp | {X}/5 | {N} reviews | [{GetApp}]({URL}) |
+<source url="{g2_url}">
+**G2**: {X}/5 ({N} reviews)
+- Ease of Use: {X}/5
+- Quality of Support: {X}/5
+- Ease of Setup: {X}/5
+</source>
+
+<source url="{capterra_url}">
+**Capterra**: {X}/5 ({N} reviews)
+- Ease of Use: {X}/5
+- Customer Service: {X}/5
+- Value for Money: {X}/5
+</source>
+
+<source url="{trustradius_url}">
+**TrustRadius**: {X}/10 ({N} reviews)
+</source>
+
+<source url="{producthunt_url}">
+**Product Hunt**: {N} upvotes
+- Launch Date: {date}
+</source>
 
 **Rating Summary**: {One sentence summary of overall reception}
 
@@ -71,19 +93,33 @@
 
 ### 5.1 What Users Love (Pros)
 
-| Theme | Frequency | Example Quote | Source |
-|-------|-----------|---------------|--------|
-| {e.g., Easy to use} | High/Medium/Low | "{direct quote}" | [{source}]({URL}) |
-| {e.g., Great integrations} | High/Medium/Low | "{direct quote}" | [{source}]({URL}) |
-| {e.g., Excellent support} | High/Medium/Low | "{direct quote}" | [{source}]({URL}) |
+<source url="{g2_reviews_url}">
+| Theme | Frequency | Example Quote |
+|-------|-----------|---------------|
+| {e.g., Easy to use} | High | "{direct quote}" |
+| {e.g., Great integrations} | Medium | "{direct quote}" |
+</source>
+
+<source url="{capterra_reviews_url}">
+| Theme | Frequency | Example Quote |
+|-------|-----------|---------------|
+| {e.g., Excellent support} | High | "{direct quote}" |
+</source>
 
 ### 5.2 What Users Dislike (Cons)
 
-| Theme | Frequency | Example Quote | Source |
-|-------|-----------|---------------|--------|
-| {e.g., Expensive} | High/Medium/Low | "{direct quote}" | [{source}]({URL}) |
-| {e.g., Steep learning curve} | High/Medium/Low | "{direct quote}" | [{source}]({URL}) |
-| {e.g., Limited free tier} | High/Medium/Low | "{direct quote}" | [{source}]({URL}) |
+<source url="{g2_reviews_url}">
+| Theme | Frequency | Example Quote |
+|-------|-----------|---------------|
+| {e.g., Expensive} | High | "{direct quote}" |
+| {e.g., Steep learning curve} | Medium | "{direct quote}" |
+</source>
+
+<source url="{reddit_url}">
+| Theme | Frequency | Example Quote |
+|-------|-----------|---------------|
+| {e.g., Limited free tier} | Medium | "{direct quote}" |
+</source>
 
 ### 5.3 Best Use Cases
 
@@ -127,16 +163,23 @@ Users report this tool may not suit:
 
 ## 7. Technical Information
 
-| Aspect | Details | Source |
-|--------|---------|--------|
-| Platforms | {Web/Desktop/Mobile/API} | [{source}]({URL}) |
-| Mobile Apps | {iOS/Android availability} | [{source}]({URL}) |
-| Browser Extensions | {Chrome/Firefox/Safari} | [{source}]({URL}) |
-| API | {Yes/No} - [{Docs}]({URL}) | [{source}]({URL}) |
-| Integrations | {Key integrations list} | [{source}]({URL}) |
-| Data Export | {Supported formats} | [{source}]({URL}) |
-| SSO/SAML | {Yes/No} | [{source}]({URL}) |
-| Open Source | {Yes/No} - [{GitHub}]({URL}) | [{source}]({URL}) |
+<source url="{official_docs_url}">
+| Aspect | Details |
+|--------|---------|
+| Platforms | {Web/Desktop/Mobile/API} |
+| Mobile Apps | {iOS/Android availability} |
+| Browser Extensions | {Chrome/Firefox/Safari} |
+| API | {Yes/No} - {Docs URL} |
+| Integrations | {Key integrations list} |
+| Data Export | {Supported formats} |
+| SSO/SAML | {Yes/No} |
+</source>
+
+<source url="{github_url}">
+**Open Source**: {Yes/No}
+- Stars: {N}
+- License: {license}
+</source>
 
 ### Security & Compliance
 - {Compliance 1: e.g., SOC 2 Type II}
@@ -148,29 +191,57 @@ Users report this tool may not suit:
 ## 8. Resources & Community
 
 ### Official Resources
-| Resource | Link |
-|----------|------|
-| Documentation | [{Docs}]({URL}) |
-| Blog | [{Blog}]({URL}) |
-| Community/Forum | [{Community}]({URL}) |
-| Help Center | [{Help}]({URL}) |
-| Status Page | [{Status}]({URL}) |
-| Changelog | [{Changelog}]({URL}) |
+
+<source url="{docs_url}">
+**Documentation**: {URL}
+</source>
+
+<source url="{blog_url}">
+**Blog**: {URL}
+</source>
+
+<source url="{community_url}">
+**Community/Forum**: {URL}
+</source>
 
 ### Reddit Presence
-| Subreddit | Subscribers | Activity |
-|-----------|-------------|----------|
-| r/{tool_subreddit} | {N} | High/Medium/Low |
+
+<source url="{subreddit_url}">
+**r/{tool_subreddit}**: {N} subscribers, {activity_level} activity
+</source>
 
 ### YouTube Tutorials
-| Title | Views | Link |
-|-------|-------|------|
-| {Tutorial title} | {N} views | [{Watch}]({URL}) |
-| {Tutorial title} | {N} views | [{Watch}]({URL}) |
+
+<source url="{youtube_tutorial_url_1}">
+**{Tutorial title}** by {channel}
+- Views: {N}
+</source>
+
+<source url="{youtube_tutorial_url_2}">
+**{Tutorial title}** by {channel}
+- Views: {N}
+</source>
 
 ---
 
-## 9. SEO Insights
+## 9. Trend Data
+
+<source url="https://trends.google.com/trends/explore?q={keyword}">
+**Google Trends** (Past 12 months):
+- Peak: {date} (index: 100)
+- Current: {index}
+- Trend: {Rising/Stable/Declining}
+
+**Top Regions**: {region1}, {region2}, {region3}
+
+**Related Queries**:
+- {query 1} (Breakout/+N%)
+- {query 2} (Breakout/+N%)
+</source>
+
+---
+
+## 10. SEO Insights
 
 ### Search Intent Categories
 
@@ -214,24 +285,12 @@ Users report this tool may not suit:
 
 ---
 
-## 10. Data Gaps
+## 11. Data Gaps
 
 | Item | Status | Reason |
 |------|--------|--------|
 | {e.g., TrustRadius score} | NOT FOUND | {e.g., Page requires login} |
 | {e.g., Enterprise pricing} | NOT FOUND | {e.g., Contact sales only} |
-
----
-
-## 11. All Sources
-
-Complete list of URLs used in this report:
-
-1. {URL 1} - {description}
-2. {URL 2} - {description}
-3. {URL 3} - {description}
-4. {URL 4} - {description}
-5. {URL 5} - {description}
 
 ---
 

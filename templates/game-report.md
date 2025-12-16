@@ -8,45 +8,62 @@
 
 ## 1. Basic Information
 
-| Field | Value | Source |
-|-------|-------|--------|
-| Official Website | {URL} | - |
-| Developer | {name} | [{source}]({URL}) |
-| Publisher | {name} | [{source}]({URL}) |
-| Release Date | {date} | [{source}]({URL}) |
-| Platforms | {PC/Console/Mobile} | [{source}]({URL}) |
-| Price | {price_info} | [{source}]({URL}) |
-| Genre/Tags | {tags} | [{source}]({URL}) |
+<source url="{official_website_url}">
+**Official Website**: {URL}
+</source>
+
+<source url="{steam_or_store_url}">
+| Field | Value |
+|-------|-------|
+| Developer | {name} |
+| Publisher | {name} |
+| Release Date | {date} |
+| Platforms | {PC/Console/Mobile} |
+| Price | {price_info} |
+| Genre/Tags | {tags} |
+</source>
 
 ---
 
 ## 2. Official Description
 
+<source url="{official_website_url}">
 > {Official description in English, keep original text}
 
+**Official Tagline**: "{tagline if available}"
+</source>
+
+<source url="{steam_or_store_url}">
 **Core Features**:
 - {Feature 1}
 - {Feature 2}
 - {Feature 3}
 - {Feature 4}
 - {Feature 5}
-
-**Official Tagline**:
-> {If available}
-
-**Source**: [{source_name}]({URL})
+</source>
 
 ---
 
 ## 3. Ratings Summary
 
-| Source | Score | Sample Size | Link |
-|--------|-------|-------------|------|
-| Steam | {X}% positive | {N} reviews | [{Steam}]({URL}) |
-| Metacritic (Critics) | {X}/100 | {N} reviews | [{Metacritic}]({URL}) |
-| Metacritic (Users) | {X}/10 | {N} reviews | [{Metacritic}]({URL}) |
-| OpenCritic | {X}/100 | {N} reviews | [{OpenCritic}]({URL}) |
-| IGN | {X}/10 | - | [{IGN}]({URL}) |
+<source url="{steam_url}">
+**Steam**: {X}% positive ({N} reviews)
+- Recent: {X}% positive ({N} reviews)
+</source>
+
+<source url="{metacritic_url}">
+**Metacritic**:
+- Critics: {X}/100 ({N} reviews)
+- Users: {X}/10 ({N} reviews)
+</source>
+
+<source url="{opencritic_url}">
+**OpenCritic**: {X}/100 ({N} reviews) - {Tier: Mighty/Strong/Fair/Weak}
+</source>
+
+<source url="{ign_url}">
+**IGN**: {X}/10
+</source>
 
 **Rating Summary**: {One sentence summary of overall reception}
 
@@ -56,19 +73,33 @@
 
 ### 4.1 Positive Points (What Users Love)
 
-| Theme | Frequency | Example Quote | Source |
-|-------|-----------|---------------|--------|
-| {e.g., Great combat system} | High/Medium/Low | "{direct quote}" | [{source}]({URL}) |
-| {e.g., Beautiful art style} | High/Medium/Low | "{direct quote}" | [{source}]({URL}) |
-| {e.g., Replayability} | High/Medium/Low | "{direct quote}" | [{source}]({URL}) |
+<source url="{steam_reviews_url}">
+| Theme | Frequency | Example Quote |
+|-------|-----------|---------------|
+| {e.g., Great combat system} | High | "{direct quote}" |
+| {e.g., Beautiful art style} | Medium | "{direct quote}" |
+</source>
+
+<source url="{reddit_url}">
+| Theme | Frequency | Example Quote |
+|-------|-----------|---------------|
+| {e.g., Replayability} | High | "{direct quote}" |
+</source>
 
 ### 4.2 Negative Points (Common Complaints)
 
-| Theme | Frequency | Example Quote | Source |
-|-------|-----------|---------------|--------|
-| {e.g., Performance issues} | High/Medium/Low | "{direct quote}" | [{source}]({URL}) |
-| {e.g., Steep learning curve} | High/Medium/Low | "{direct quote}" | [{source}]({URL}) |
-| {e.g., Short playtime} | High/Medium/Low | "{direct quote}" | [{source}]({URL}) |
+<source url="{steam_reviews_url}">
+| Theme | Frequency | Example Quote |
+|-------|-----------|---------------|
+| {e.g., Performance issues} | High | "{direct quote}" |
+| {e.g., Steep learning curve} | Medium | "{direct quote}" |
+</source>
+
+<source url="{reddit_url}">
+| Theme | Frequency | Example Quote |
+|-------|-----------|---------------|
+| {e.g., Short playtime} | Low | "{direct quote}" |
+</source>
 
 ### 4.3 Target Player Profiles
 
@@ -81,42 +112,53 @@ Based on user discussions, this game appeals to:
 
 ## 5. Media Reviews Summary
 
-### {Publication 1}
+<source url="{ign_review_url}">
+### IGN
 - **Score**: {X}/10
 - **Verdict**: "{One-line summary}"
-- **Key Quote**: > "{Notable quote from review}"
-- **Link**: [{publication}]({URL})
+- **Key Quote**: "{Notable quote from review}"
+</source>
 
-### {Publication 2}
+<source url="{gamespot_review_url}">
+### GameSpot
 - **Score**: {X}/10
 - **Verdict**: "{One-line summary}"
-- **Key Quote**: > "{Notable quote from review}"
-- **Link**: [{publication}]({URL})
+- **Key Quote**: "{Notable quote from review}"
+</source>
 
-### {Publication 3}
-- **Score**: {X}/10
+<source url="{polygon_review_url}">
+### Polygon
 - **Verdict**: "{One-line summary}"
-- **Key Quote**: > "{Notable quote from review}"
-- **Link**: [{publication}]({URL})
+- **Key Quote**: "{Notable quote from review}"
+</source>
 
 ---
 
 ## 6. Visual Resources
 
 ### Official Trailers
-| Title | Platform | Link |
-|-------|----------|------|
-| {Trailer name} | YouTube | [{Watch}]({URL}) |
-| {Trailer name} | YouTube | [{Watch}]({URL}) |
 
-### Screenshots
-| Description | Link |
-|-------------|------|
-| {e.g., Combat gameplay} | {URL} |
-| {e.g., Character selection} | {URL} |
+<source url="{youtube_trailer_url_1}">
+**{Trailer name}**: {view_count} views, {like_count} likes
+</source>
 
-### Press Kit / Media Assets
-- {URL if available, otherwise [NOT FOUND]}
+<source url="{youtube_trailer_url_2}">
+**{Trailer name}**: {view_count} views, {like_count} likes
+</source>
+
+### Top Community Videos
+
+<source url="{youtube_video_url}">
+**{Video title}** by {channel_name}
+- Views: {N}
+- Published: {date}
+</source>
+
+### Screenshots & Press Kit
+
+<source url="{press_kit_url}">
+Press Kit: {URL or [NOT FOUND]}
+</source>
 
 ---
 
@@ -124,15 +166,23 @@ Based on user discussions, this game appeals to:
 
 ### Reddit Activity
 
-| Subreddit | Subscribers | Activity Level |
-|-----------|-------------|----------------|
-| r/{game_subreddit} | {N} | High/Medium/Low |
+<source url="{subreddit_url}">
+**r/{game_subreddit}**: {N} subscribers, {activity_level} activity
+</source>
 
 ### Hot Topics
-| Topic | Engagement | Link |
-|-------|------------|------|
-| {Topic title} | {upvotes} upvotes | [{Reddit}]({URL}) |
-| {Topic title} | {upvotes} upvotes | [{Reddit}]({URL}) |
+
+<source url="{reddit_post_url_1}">
+**{Post title}**
+- Upvotes: {N}
+- Top comment: "{summary}"
+</source>
+
+<source url="{reddit_post_url_2}">
+**{Post title}**
+- Upvotes: {N}
+- Top comment: "{summary}"
+</source>
 
 ### Common Discussion Themes
 - {Theme 1: e.g., "Build guides and strategy discussions"}
@@ -141,9 +191,27 @@ Based on user discussions, this game appeals to:
 
 ---
 
-## 8. Competitive Landscape
+## 8. Trend Data
+
+<source url="https://trends.google.com/trends/explore?q={keyword}">
+**Google Trends** (Past 12 months):
+- Peak: {date} (index: 100)
+- Current: {index}
+- Trend: {Rising/Stable/Declining}
+
+**Top Regions**: {region1}, {region2}, {region3}
+
+**Related Queries**:
+- {query 1} (Breakout/+N%)
+- {query 2} (Breakout/+N%)
+</source>
+
+---
+
+## 9. Competitive Landscape
 
 ### Similar Games
+
 | Game | Key Similarity | Key Difference |
 |------|---------------|----------------|
 | {Competitor 1} | {similarity} | {difference} |
@@ -154,7 +222,7 @@ Based on user discussions, this game appeals to:
 
 ---
 
-## 9. SEO Insights
+## 10. SEO Insights
 
 ### Search Intent Categories
 
@@ -191,24 +259,12 @@ Based on user discussions, this game appeals to:
 
 ---
 
-## 10. Data Gaps
+## 11. Data Gaps
 
 | Item | Status | Reason |
 |------|--------|--------|
 | {e.g., OpenCritic score} | NOT FOUND | {e.g., Page blocked by Cloudflare} |
 | {e.g., Press kit} | NOT FOUND | {e.g., Not publicly available} |
-
----
-
-## 11. All Sources
-
-Complete list of URLs used in this report:
-
-1. {URL 1} - {description}
-2. {URL 2} - {description}
-3. {URL 3} - {description}
-4. {URL 4} - {description}
-5. {URL 5} - {description}
 
 ---
 
