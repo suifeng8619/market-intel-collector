@@ -1,11 +1,16 @@
 ---
 name: market-intel-collector
 description: Collect market intelligence for games and tools in international (English) markets. Use when user asks to "collect info about", "research", "investigate", or "gather data on" a game or tool product. Outputs AI-friendly structured Markdown reports for SEO analysis and content creation.
+version: 2.0.0
 ---
 
-# Market Intelligence Collector
+# Market Intelligence Collector v2.0
 
 Collect comprehensive market information for games and tools targeting international English-speaking markets.
+
+**Version**: 2.0.0
+**Updated**: 2025-12-17
+**Data Sources**: 74 platforms (32 core + 15 Reddit + 12 intelligence + 15 supplementary)
 
 ## When to Use
 
@@ -265,15 +270,41 @@ If search results show multiple products with same name:
 | 5-7 | 🟡 CAUTION | Mixed signals, proceed with specific conditions |
 | 1-4 | 🔴 NO-GO | Poor opportunity, skip or wait for changes |
 
-### Five Factors Weighting
+### Six Factors Assessment (六事评估) - v2.0
 
 | Factor | Weight | What to Assess |
 |--------|--------|----------------|
-| 道 (User Pain) | 25% | Are users actively complaining about alternatives? |
-| 天 (Timing) | 25% | Is Google Trends rising or falling? |
+| 道 (User Pain) | 20% | Are users actively complaining about alternatives? |
+| 天 (Timing) | 20% | Is Google Trends rising or falling? |
 | 地 (Competition) | 20% | How many strong competitors in SERP? |
 | 将 (Team) | 15% | Is the product well-funded and actively developed? |
 | 法 (Product) | 15% | Is the product stable with good reviews? |
+| **己 (Self)** | 10% | Do we have capability to execute in this space? |
+
+**New in v2.0**: Added 己 (Self-Assessment) factor to evaluate our own capability before committing resources.
+
+### Risk Modifiers (风险调节系数)
+
+Apply these modifiers to the raw Battle Index:
+
+| Risk Type | Level | Modifier |
+|-----------|-------|----------|
+| Legal Risk (法律风险) | None / Low / Medium / High / Critical | 1.0 / 0.95 / 0.85 / 0.70 / 0.50 |
+| Creator Risk (创作者风险) | Established / Known / Anonymous / Young / Controversial | 1.0 / 0.95 / 0.85 / 0.75 / 0.60 |
+| Platform Risk (平台风险) | Owned / Stable / Volatile / May Shutdown | 1.0 / 0.95 / 0.80 / 0.60 |
+
+**Final Battle Index** = Raw Score × Legal Modifier × Creator Modifier × Platform Modifier
+
+### Dynamic Weighting by Lifecycle
+
+Adjust factor weights based on keyword lifecycle stage:
+
+| Stage | 道 | 天 | 地 | 将 | 法 | 己 |
+|-------|-----|-----|-----|-----|-----|-----|
+| Emerging (Trends < 20) | 15% | 30% | 20% | 10% | 15% | 10% |
+| Growing (Trends 20-60) | 20% | 20% | 20% | 15% | 15% | 10% |
+| Peak (Trends > 60) | 20% | 10% | 25% | 15% | 20% | 10% |
+| Declining (Trends -30%) | 25% | 5% | 20% | 15% | 25% | 10% |
 
 ## Advanced Data Collection
 
@@ -430,9 +461,27 @@ curl -s "https://www.googleapis.com/youtube/v3/videos?part=statistics,snippet&id
 
 ### Reference Documents
 
-- `references/schema.md` - Input/output data contracts
-- `references/hotspot-monitors.md` - Trending source monitoring
-- `references/data-sources.md` - Platform-specific extraction rules
+| Document | Version | Purpose |
+|----------|---------|---------|
+| `references/data-sources.md` | v2.0 | 74 data sources with priority matrix |
+| `references/hotspot-monitors.md` | v2.0 | Keshik Scout Network (怯薛军前哨网络) |
+| `references/schema.md` | v1.1 | Input/output data contracts |
+| `references/methodology-optimization.md` | v1.0 | Battle Index optimization based on expert review |
+| `references/response-levels.md` | v1.1 | L0-L5 response level definitions |
+| `references/longtail-blitz-tactics.md` | v1.0 | Hannibal's three-tier content tactics |
+
+### Response Levels (响应等级)
+
+| Level | Name | Trigger | Resource |
+|-------|------|---------|----------|
+| L0 | 零投入 | Final Index < 3 | 0 人天 |
+| L1 | 观察 | Final Index 3-4 | 0.1 人天 |
+| L2 | 准备 | Final Index 4-5 | 0.5 人天 |
+| L3 | 谨慎进入 | Final Index 5-6 | 2-5 人天 |
+| L4 | 快速跟进 | Final Index 6-7 | 5-10 人天 |
+| L5 | 全力投入 | Final Index 7+ | 10+ 人天 |
+
+**New in v2.0**: Added L0 (Zero Investment) level for high-risk opportunities.
 
 ## Integration with Other Skills
 
@@ -461,3 +510,17 @@ User: Collect info on Spark
 Assistant: There are multiple products named "Spark" - could you specify
 which one? For example: Spark email app, Apache Spark, Spark AR, etc.
 ```
+
+## Version History
+
+| Version | Date | Changes |
+|---------|------|---------|
+| 2.0.0 | 2025-12-17 | Major upgrade: 74 data sources, 六事评估, risk modifiers, L0 response level |
+| 1.1.0 | 2025-12 | Added: Keshik Scout Network, Long-tail Blitz Tactics, Response Levels |
+| 1.0.0 | 2025-12 | Initial release |
+
+---
+
+*Market Intelligence Collector Skill*
+*Version: 2.0.0*
+*Last Updated: 2025-12-17*
