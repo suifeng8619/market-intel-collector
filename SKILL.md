@@ -143,11 +143,46 @@ Extract: YouTube video URLs, official image URLs when available.
 Use the appropriate template:
 - Games: `templates/game-report.md`
 - Tools: `templates/tool-report.md`
+- **Flash Mode**: `templates/flash-report.md` (5-minute quick assessment)
 
 Fill in all sections. For missing data, use format:
 ```
 [NOT FOUND: {reason}]
 ```
+
+## Report Modes
+
+### Flash Report (快报模式) - 5 Minutes
+
+**When to use:**
+- Hot trending topic needs quick assessment
+- Initial screening before full investment
+- User requests "quick look" or "fast check"
+
+**What to collect (minimum):**
+1. Google Trends current status
+2. Primary platform rating (Steam/G2/etc.)
+3. Quick SERP scan for competition
+
+**Output:** `flash-report.md` with Flash Battle Index
+
+**Command trigger:**
+```
+User: Quick check on {keyword}
+User: Flash report for {keyword}
+User: Is {keyword} worth investigating?
+```
+
+### Full Report (完整报告) - 20-30 Minutes
+
+**When to use:**
+- Confirmed opportunity needs deep analysis
+- Content creation planning
+- Competitive intelligence
+
+**What to collect:** All 13 sections in full template
+
+**Output:** `game-report.md` or `tool-report.md`
 
 ## Fallback Strategies
 
@@ -202,6 +237,43 @@ If search results show multiple products with same name:
 3. **Respect rate limits** - Don't spam requests to same domain
 4. **Handle failures gracefully** - One failed source shouldn't stop the whole process
 5. **Prioritize official sources** - Official > user reviews > media > forums
+6. **MANDATORY: Every report must end with a verdict** - No report is complete without Battle Assessment and Executive Recommendations
+
+## Mandatory Output Requirements
+
+**CRITICAL: Every report MUST include these final sections:**
+
+### Section 12: Battle Assessment (五事七计)
+- Five Factors Analysis table (道天地将法)
+- Battle Index score (1-10) with GO/CAUTION/NO-GO indicator
+- Verdict sentence explaining the score
+
+### Section 13: Executive Recommendations (决策建议)
+- Market Opportunity Assessment
+- Recommended Actions (Immediate + Short-term + Hold conditions)
+- Risk Alerts table
+- ROI Estimate
+- **Final Verdict box** with clear PROCEED / CAUTION / SKIP recommendation
+
+**A report without these sections is INCOMPLETE and must not be delivered.**
+
+### Battle Index Scoring Guide
+
+| Score | Status | Meaning |
+|-------|--------|---------|
+| 8-10 | 🟢 GO | High confidence opportunity, proceed immediately |
+| 5-7 | 🟡 CAUTION | Mixed signals, proceed with specific conditions |
+| 1-4 | 🔴 NO-GO | Poor opportunity, skip or wait for changes |
+
+### Five Factors Weighting
+
+| Factor | Weight | What to Assess |
+|--------|--------|----------------|
+| 道 (User Pain) | 25% | Are users actively complaining about alternatives? |
+| 天 (Timing) | 25% | Is Google Trends rising or falling? |
+| 地 (Competition) | 20% | How many strong competitors in SERP? |
+| 将 (Team) | 15% | Is the product well-funded and actively developed? |
+| 法 (Product) | 15% | Is the product stable with good reviews? |
 
 ## Advanced Data Collection
 
@@ -289,6 +361,78 @@ For understanding HOW a game went viral:
 3. **Fandom Wiki** - Version history, timeline
 4. **TikTok** - Manual search (no API), note top hashtag views
 5. **YouTube** - Sort by upload date + view count to find first viral videos
+
+## Integration with Keyword Mining System
+
+The skill integrates with the existing keyword mining system at `/Users/suifeng/python/2026/seo-tools/关键词挖掘/`.
+
+### Available Collectors (22 Platforms)
+
+**Gaming Platforms (No API Required):**
+- `steam.py` - Steam concurrent players, reviews, tags
+- `itch_io.py` - itch.io games, ratings, downloads
+- `epic_games.py` - Epic Games Store listings
+- `gog.py` - GOG.com games
+
+**General Platforms (No API Required):**
+- `google_trends.py` - Interest over time, related queries (uses pytrends)
+- `google_suggest.py` - Autocomplete suggestions
+- `github_trending.py` - Trending repositories
+
+**Platforms Requiring API Keys:**
+- `youtube.py` - Videos, view counts, channels (YOUTUBE_API_KEY ✅ configured)
+- `reddit.py` - Posts, comments, subreddits (needs REDDIT_CLIENT_ID, REDDIT_CLIENT_SECRET)
+- `twitch.py` - Streams, clips, categories (needs TWITCH_CLIENT_ID, TWITCH_CLIENT_SECRET)
+
+### YouTube API Usage
+
+The YouTube API is configured and can be used directly:
+
+```bash
+# Search videos for keyword
+curl -s "https://www.googleapis.com/youtube/v3/search?part=snippet&q={keyword}&type=video&maxResults=10&order=viewCount&key=$YOUTUBE_API_KEY"
+
+# Get video statistics
+curl -s "https://www.googleapis.com/youtube/v3/videos?part=statistics,snippet&id={video_ids}&key=$YOUTUBE_API_KEY"
+```
+
+**Use YouTube API for:**
+- Top videos by view count for a keyword
+- Video publish dates (to find first viral videos)
+- Channel information
+- Engagement metrics (views, likes, comments)
+
+### Data Flow Architecture
+
+```
+┌─────────────────────────────────────────────────────────────┐
+│                    Upstream Systems                          │
+├─────────────────────────────────────────────────────────────┤
+│  关键词挖掘 Collectors  │  Hotspot Monitors  │  Manual Input │
+└────────────┬────────────┴─────────┬──────────┴───────┬──────┘
+             │                      │                  │
+             ▼                      ▼                  ▼
+┌─────────────────────────────────────────────────────────────┐
+│              market-intel-collector (This Skill)             │
+├─────────────────────────────────────────────────────────────┤
+│  Input: keyword + type + context                            │
+│  Process: Multi-source collection + Battle Assessment       │
+│  Output: Structured report with verdict                     │
+└────────────────────────────┬────────────────────────────────┘
+                             │
+                             ▼
+┌─────────────────────────────────────────────────────────────┐
+│                    Downstream Systems                        │
+├─────────────────────────────────────────────────────────────┤
+│  Content Creation AI  │  SEO Analysis  │  Decision Dashboard │
+└─────────────────────────────────────────────────────────────┘
+```
+
+### Reference Documents
+
+- `references/schema.md` - Input/output data contracts
+- `references/hotspot-monitors.md` - Trending source monitoring
+- `references/data-sources.md` - Platform-specific extraction rules
 
 ## Integration with Other Skills
 
